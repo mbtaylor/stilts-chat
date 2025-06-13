@@ -1,0 +1,3 @@
+[submodule "starjava/source"]
+	path = starjava/source
+	url = https://github.com/Starlink/starjava.git
