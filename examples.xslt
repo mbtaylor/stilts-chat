@@ -6,7 +6,7 @@
 
   <xsl:template match="/">
     <xsl:element name="output">
-      <xsl:apply-templates select="//subsubsect[subhead/title='Examples']"/>
+      <xsl:apply-templates select="//sect[@id='cmdUsage']/subsect/subsubsect[subhead/title='Examples']"/>
     </xsl:element>
   </xsl:template>
 
@@ -14,14 +14,14 @@
     <xsl:text>&#x0a;</xsl:text>
     <xsl:param name="taskname" select="../@id"/>
     <xsl:for-each select="p/dl/dt">
-      <xsl:element name="ex">
+      <xsl:element name="example">
         <xsl:element name="task">
           <xsl:apply-templates select="$taskname"/>
         </xsl:element>
         <xsl:element name="prompt">
           <xsl:apply-templates select="following-sibling::dd[1]"/>
         </xsl:element>
-        <xsl:element name="invocation">
+        <xsl:element name="response">
           <xsl:apply-templates select="."/>
         </xsl:element>
       </xsl:element>
